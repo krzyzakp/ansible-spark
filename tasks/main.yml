@@ -1,0 +1,14 @@
+---
+
+- name: "Spark: create Spark group"
+  group:
+    name: "{{ spark_group }}"
+ 
+- name: "Spark: create Spark user"
+  group:
+    name: "{{ spark_user }}"
+    group: "{{ spark_group }}"
+
+- include_task: install.yml
+
+- include_task: configure.yml

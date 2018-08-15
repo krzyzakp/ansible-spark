@@ -1,0 +1,29 @@
+---
+
+spark_user: spark
+spark_group: spark
+spark_java_home: /usr/lib/jvm/java-8-openjdk-amd64/
+spark_version: "2.3.1"
+spark_hadoop: "hadoop2.7"
+spark_bin_name: "spark-{{ spark_version }}-bin-{{ spark-hadoop }}.tgz"
+
+spark_download_mirror: "http://artfiles.org/apache.org/spark"
+spark_download_url: "{{ spark_download_url }}/spark-{{ spark_version }}/{{ spark_bin_name }}"
+
+spark_install_dir: "/opt/"
+spark_path: "{{ spark_install_dir }}/spark-{{ spark_version }}"
+
+spark_systemd_dir: "/etc/systemd/system/"
+
+spark_master_enabled: !!str yes
+spark_master_state: started
+spark_master_host: ""
+spark_master_url: "spark://{{ spark_master_host }}:7077"
+
+spark_worker_enabled: !!str yes
+spark_worker_state: started
+spark_worker_cores: 4
+spark_worker_memory: 2g
+
+spark_zookeeper_url: ""
+

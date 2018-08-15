@@ -1,0 +1,13 @@
+---
+
+- name: "Spark: ensure spark-master service is enabled and running"
+  service:
+    name: spark-master
+    enabled: "{{ spark_master_enabled }}"
+    state: "{{ spark_master_state }}"
+
+- name: "Spark: ensure spark-worker service is enabled and running"
+  service:
+    name: spark-worker
+    enabled: "{{ spark_worker_enabled }}"
+    state: "{{ spark_worker_state }}"
