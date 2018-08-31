@@ -1,20 +1,22 @@
 ---
 
-- name: "Spark: download package"
-  command: "/usr/bin/wget  {{ spark_download_path }}"
-  args:
-    chdir: /tmp
-    creates: "/tmp/{{ spark_bin_name }}"
+- name: "Spark: fetch source"
+  get_url:
+    url: "{{ spark_download_url }}"
+    dest: "/usr/local/src/{{ spark_bin_name }}"
 
 - name: "Spark: create install directory"
   file:
-    path: "{{ spark_install_dir }}"
+    path: "{{ spark_path }}"
     state: directory
     owner: "{{ spark_user }}"
     group: "{{ spark_group }}"
+    recurse: yes
 
 - name: "Spark: unarchive donwloaded package"
   unarchive:
-    src: "/tmp/{{ spark_bin_name }}"
-    dest: "{{ spark_install_dir }}"
-
+    src: "/usr/local/src/{{ spark_bin_name }}"
+    dest: "{{ spark_path }}"
+    remote_src: yes
+    extra_opts:
+      - "--strip-components=1"

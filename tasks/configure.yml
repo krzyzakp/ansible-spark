@@ -7,7 +7,7 @@
     state: link
   with_items:
     - { src: "{{ spark_path }}/conf/", dest: /etc/spark }
-    - { src: "{{ spark_path }}/log/", dest: /var/log/spark }
+    #- { src: "{{ spark_path }}/log/", dest: /var/log/spark }
 
 - name: "Spark: set spark environment variables"
   template:
@@ -26,6 +26,8 @@
     dest: "{{ spark_systemd_dir }}/spark-master.service"
     owner: "{{ spark_user }}"
     group: "{{ spark_group }}"
+  notify:
+    - spark-master restart
 
 - name: "Spark: create systemd script for worker"
   template:
@@ -33,4 +35,17 @@
     dest: "{{ spark_systemd_dir }}/spark-worker.service"
     owner: "{{ spark_user }}"
     group: "{{ spark_group }}"
+  notify:
+    - spark-worker restart
+    
+
+- name: "Spark: ensure spark-master service is enabled and running"
+  service:
+    name: spark-master
+    enabled: "{{ spark_master_enabled }}"
+
+- name: "Spark: ensure spark-worker service is enabled and running"
+  service:
+    name: spark-worker
+    enabled: "{{ spark_worker_enabled }}"
 
