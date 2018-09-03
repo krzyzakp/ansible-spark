@@ -3,11 +3,13 @@
 - name: "Spark: create Spark group"
   group:
     name: "{{ spark_group }}"
+  become: true
 
 - name: "Spark: create Spark user"
   user:
     name: "{{ spark_user }}"
     group: "{{ spark_group }}"
+  become: true
 
 - include: install.yml
 

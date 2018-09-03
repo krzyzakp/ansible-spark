@@ -8,6 +8,7 @@
   with_items:
     - { src: "{{ spark_path }}/conf/", dest: /etc/spark }
     #- { src: "{{ spark_path }}/log/", dest: /var/log/spark }
+  become: true
 
 - name: "Spark: set spark environment variables"
   template:
@@ -43,9 +44,11 @@
   service:
     name: spark-master
     enabled: "{{ spark_master_enabled }}"
+  become: true
 
 - name: "Spark: ensure spark-worker service is enabled and running"
   service:
     name: spark-worker
     enabled: "{{ spark_worker_enabled }}"
+  become: true
 

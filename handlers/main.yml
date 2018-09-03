@@ -4,14 +4,16 @@
   systemd:
     daemon_reload: yes
   when: ansible_service_mgr == "systemd"
+  become: true
 
 - name: spark-master restart
   service:
     name: spark-master
     state: restarted
+  become: true
 
 - name: spark-worker restart
   service:
     name: spark-worker
     state: restarted
-
+  become: true
