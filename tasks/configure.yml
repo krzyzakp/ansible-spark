@@ -19,6 +19,7 @@
   notify:
     - spark-master restart
     - spark-worker restart
+  become: true
 
 # Create services
 - name: "Spark: create systemd script for master"
@@ -29,6 +30,7 @@
     group: "{{ spark_group }}"
   notify:
     - spark-master restart
+  become: true
 
 - name: "Spark: create systemd script for worker"
   template:
@@ -38,6 +40,7 @@
     group: "{{ spark_group }}"
   notify:
     - spark-worker restart
+  become: true
     
 
 - name: "Spark: ensure spark-master service is enabled and running"
