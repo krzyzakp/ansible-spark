@@ -17,14 +17,14 @@ spark_systemd_dir: "/etc/systemd/system/"
 
 spark_master_enabled: !!str no
 spark_master_state: stopped
-spark_master_host: ''
+spark_master_host: ""
 spark_master_hosts: []
 spark_master_url: "spark://{{ spark_master_hosts | join(':7077,') }}:7077"
 
 spark_worker_enabled: !!str no
 spark_worker_state: stopped
 spark_worker_cores: 4
-spark_worker_memory: 2g
+spark_worker_memory: "2g"
 
 spark_zookeeper_url: ""
 
