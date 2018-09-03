@@ -1,3 +1,4 @@
+---
 language: python
 python: "2.7"
 
@@ -50,5 +51,5 @@ script:
   - ansible-playbook tests/test.yml -i tests/inventory --syntax-check
   # Full install check
   - ansible-playbook tests/test.yml -i tests/inventory -v
-	# Impotence check
-  - ansible-playbook tests/test.yml -i tests/inventory -v | grep -q 'changed0.*failed=0' && (echo 'Idempotence test: pass' && exit 0) || (echo 'Idempotence test: fail' && exit 1)
+  # Impotence check
+  - ansible-playbook tests/test.yml -i tests/inventory -v | grep -q 'changed0.*failed=0' && (echo 'Idempotence test pass' && exit 0) || (echo 'Idempotence test fail' && exit 1)
