@@ -11,6 +11,6 @@
     group: "{{ spark_group }}"
   become: true
 
-- include: install.yml
+- include_tasks: install.yml
 
-- include: configure.yml
+- include_tasks: configure.yml
