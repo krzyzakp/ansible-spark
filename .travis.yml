@@ -46,4 +46,4 @@ script:
   # Full install check
   - ansible-playbook tests/test.yml -i tests/inventory -v
   # Impotence check
-  - ansible-playbook tests/test.yml -i tests/inventory -v  #| grep 'changed0.*failed=0' && (echo 'Idempotence test pass' && exit 0) || (echo 'Idempotence test fail' && exit 1)
+  - ansible-playbook tests/test.yml -i tests/inventory -v | grep 'changed0.*failed=0' && (echo 'Idempotence test pass' && exit 0) || (echo 'Idempotence test fail' && exit 1)
