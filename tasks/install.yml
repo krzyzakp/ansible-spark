@@ -4,6 +4,7 @@
   get_url:
     url: "{{ spark_download_url }}"
     dest: "/usr/local/src/{{ spark_bin_name }}"
+  become: true
 
 - name: "Spark: create install directory"
   file:
@@ -12,6 +13,7 @@
     owner: "{{ spark_user }}"
     group: "{{ spark_group }}"
     recurse: yes
+  become: true
 
 - name: "Spark: unarchive donwloaded package"
   unarchive:
