@@ -4,3 +4,5 @@
   remote_user: root
   gather_facts: true
 
+  roles:
+    - ansible-spark
