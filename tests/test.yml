@@ -4,5 +4,3 @@
   remote_user: root
   gather_facts: true
 
-  roles:
-    - krzyzakp.ansible-spark
