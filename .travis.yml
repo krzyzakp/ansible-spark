@@ -37,6 +37,8 @@ addons:
   apt:
     packages:
     - python-pip
+    - systemd
+    - systemd-sysv
 
 install:
   # Install ansible
