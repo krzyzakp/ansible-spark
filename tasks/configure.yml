@@ -18,7 +18,6 @@
     group: "{{ spark_group }}"
   notify:
     - spark-master restart
-    - spark-worker restart
   become: true
 
 # Create services
@@ -41,6 +40,7 @@
   notify:
     - spark-worker restart
   become: true
+  when: spark_worker_enabled == "yes"
     
 
 - name: "Spark: ensure spark-master service is enabled and running"
@@ -48,10 +48,12 @@
     name: spark-master
     enabled: "{{ spark_master_enabled }}"
   become: true
+  when: spark_master_enabled == "yes"
 
 - name: "Spark: ensure spark-worker service is enabled and running"
   service:
     name: spark-worker
     enabled: "{{ spark_worker_enabled }}"
   become: true
+  when: spark_worker_enabled == "yes"
 
