@@ -56,4 +56,3 @@
     enabled: "{{ spark_worker_enabled }}"
   become: true
   when: spark_worker_enabled == "yes"
-

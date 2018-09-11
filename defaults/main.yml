@@ -28,4 +28,3 @@ spark_worker_cores: 4
 spark_worker_memory: "2g"
 
 spark_zookeeper_url: ""
-
