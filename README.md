@@ -24,7 +24,8 @@ spark_systemd_dir: "/etc/systemd/system/"  #Systemd directory
 spark_master_enabled: !!str no  #Should spark-master be enabled?
 spark_master_state: stopped    #Spark-master state on machine
 spark_master_host: ""      #Spark-master host - use when different from hostname
-spark_master_hosts: []     # List of spark master hosts - used by clients!
+spark_master_hosts: []     #List of spark master hosts - used by clients!
+spark_master_opts: ""      #Options for master to be passed
 spark_master_url: "spark://{{ spark_master_hosts | join(':7077,') }}:7077"   #Spark-master url
 
 spark_worker_enabled: !!str no   #Should spark-worker be enabled

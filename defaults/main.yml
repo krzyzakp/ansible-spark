@@ -19,6 +19,7 @@ spark_master_enabled: !!str no
 spark_master_state: stopped
 spark_master_host: ""
 spark_master_hosts: []
+spark_master_opts: "-Dspark.deploy.defaultCores=1"
 spark_master_url: "spark://{{ spark_master_hosts | join(':7077,') }}:7077"
 
 spark_worker_enabled: !!str no

@@ -3,6 +3,8 @@
 JAVA_HOME={{ spark_java_home }}
 SPARK_DAEMON_JAVA_OPTS="-Dspark.deploy.recoveryMode=ZOOKEEPER -Dspark.deploy.zookeeper.url={{ spark_zookeeper_url }}  -Dspark.deploy.zookeeper.dir=/spark"
 
+SPARK_MASTER_OPTS="{{ spark_master_opts }}"
+
 SPARK_HOME={{ spark_path }}
 
 SPARK_MASTER_HOST={{ spark_master_host }}
