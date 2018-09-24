@@ -18,6 +18,7 @@
     group: "{{ spark_group }}"
   notify:
     - spark-master restart
+    - spark-worker restart
   become: true
 
 # Create services
