@@ -6,6 +6,8 @@ Ansible role for installing and configuring spark master/worker services.
 
 ## Role variables
 ```
+spark_uid:           #Spark user UID, by default empty, so omitted
+spark_gid:           #Spark group GID, by default empty, so omitted
 spark_user: spark    #User as which spark will work
 spark_group: spark   #Group for spark user
 spark_java_home: /usr/lib/jvm/java-8-openjdk-amd64/     #Path to java home dir
