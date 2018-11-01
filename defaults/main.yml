@@ -1,5 +1,7 @@
 ---
 
+spark_uid: null
+spark_gid: null
 spark_user: spark
 spark_group: spark
 spark_java_home: /usr/lib/jvm/java-8-openjdk-amd64/

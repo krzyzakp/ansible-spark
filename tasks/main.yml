@@ -3,12 +3,14 @@
 - name: "Spark: create Spark group"
   group:
     name: "{{ spark_group }}"
+    gid: "{{ spark_gid | default(omit) }}"
   become: true
 
 - name: "Spark: create Spark user"
   user:
     name: "{{ spark_user }}"
     group: "{{ spark_group }}"
+    uid: "{{ spark_uid | default(omit) }}"
   become: true
 
 - include_tasks: install.yml
