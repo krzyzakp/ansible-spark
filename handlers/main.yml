@@ -11,9 +11,11 @@
     name: spark-master
     state: restarted
   become: true
+  when: spark_master_enabled != "no"
 
 - name: spark-worker restart
   service:
     name: spark-worker
     state: restarted
   become: true
+  when: spark_worker_enabled != "no"

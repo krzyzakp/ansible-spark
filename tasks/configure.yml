@@ -42,7 +42,6 @@
     - spark-worker restart
   become: true
   when: spark_worker_enabled == "yes"
-    
 
 - name: "Spark: ensure spark-master service is enabled and running"
   service:

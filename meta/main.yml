@@ -1,5 +1,6 @@
 galaxy_info:
   author: Paweł Szczepaniak
+  company: N/A
   description: Role for setting Spark master and worker
 
   license: BSD
@@ -16,7 +17,7 @@ galaxy_info:
         - jessie
         - stretch
         - buster
-  
+
   galaxy_tags:
     - spark
 
