@@ -38,6 +38,9 @@ spark_worker_memory: "2g"   #Memory for each spark-worker
 spark_zookeeper_url: ""    #Zookeeper URL - used to sync all nodes 
 ```
 
+## Testing
+Tests are done using [docker_test_runner](https://github.com/timorunge/docker-test-runner), thanks to [Timo Runge](https://github.com/timorunge/docker-test-runner). You can run them locally, before commiting. Fetch [docker_test_runner.py](https://github.com/timorunge/docker-test-runner/blob/master/docker_test_runner.py) into main app dir (it's in _.gitignore_ file already) and run it.
+
 ## License
 BSD
 

@@ -17,6 +17,7 @@ docker_image_path: "__PATH__/tests/docker"
 docker_images:
   - Debian_9_4
   - Debian_10
+  - Ubuntu_16_04
   - Ubuntu_18_04
 
 docker_container_volumes:
