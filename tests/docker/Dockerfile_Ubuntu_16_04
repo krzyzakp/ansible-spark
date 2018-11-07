@@ -1,4 +1,4 @@
-FROM debian:9.4-slim
+FROM ubuntu:16.04
 LABEL maintainer="Pawel Szczepaniak"
 
 ARG ansible_role=${ansible_role}
